@@ -2,7 +2,7 @@ import http from 'k6/http';
 import { check, group, sleep, fail } from 'k6';
 
 export let options = {
-	vus: 5, // 3 user looping for 1 minute
+	vus: 2, // 3 user looping for 1 minute
 	duration: '1m',
 
 	thresholds: {
@@ -12,7 +12,17 @@ export let options = {
 
 const BASE_URL = 'http://127.0.0.1:8000';
 
+let Headers = {
+	headers: {
+		accept: 'application/json'
+	}
+};
+
 export default () => {
-	let books = http.get(`${BASE_URL}/api/books`).json();
+	let users = http.get(`${BASE_URL}/api/users`, Headers).json();
+	console.log(JSON.stringify(users));
+	check(users, {
+		'is status 200': (u) => u.status === 200
+	});
 	sleep(1);
 };
