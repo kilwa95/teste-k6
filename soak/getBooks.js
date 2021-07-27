@@ -13,10 +13,10 @@ const API_BASE_URL = 'http://127.0.0.1:8000/api'; // make sure this is not produ
 
 export default function () {
   http.batch([
-    ['GET', `${API_BASE_URL}/book/1/`],
-    ['GET', `${API_BASE_URL}/book/2/`],
-    ['GET', `${API_BASE_URL}/book/3/`],
-    ['GET', `${API_BASE_URL}/book/4/`],
+    ['GET', `${API_BASE_URL}/books/1/`],
+    ['GET', `${API_BASE_URL}/books/2/`],
+    ['GET', `${API_BASE_URL}/books/3/`],
+    ['GET', `${API_BASE_URL}/books/4/`],
   ]);
 
   sleep(1);
