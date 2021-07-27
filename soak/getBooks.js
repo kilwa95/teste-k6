@@ -9,7 +9,7 @@ export let options = {
   ],
 };
 
-const API_BASE_URL = 'http://127.0.0.1:8000'; // make sure this is not production
+const API_BASE_URL = 'http://127.0.0.1:8000/api'; // make sure this is not production
 
 export default function () {
   http.batch([

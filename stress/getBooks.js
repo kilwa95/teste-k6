@@ -16,32 +16,24 @@ export let options = {
 };
 
 export default function () {
-    const BASE_URL = 'http://127.0.0.1:8000'; // make sure this is not production
+    const BASE_URL = 'http://127.0.0.1:8000/api'; // make sure this is not production
 
   let responses = http.batch([
     [
       'GET',
-      `${BASE_URL}/book/1/`,
-      null,
-      { tags: { name: 'PublicCrocs' } },
+      `${BASE_URL}/books/1001/`,
     ],
     [
       'GET',
-      `${BASE_URL}/book/2/`,
-      null,
-      { tags: { name: 'PublicCrocs' } },
+      `${BASE_URL}/books/1002/`,
     ],
     [
       'GET',
-      `${BASE_URL}/book/3/`,
-      null,
-      { tags: { name: 'PublicCrocs' } },
+      `${BASE_URL}/books/1003/`,
     ],
     [
       'GET',
-      `${BASE_URL}/book/4/`,
-      null,
-      { tags: { name: 'PublicCrocs' } },
+      `${BASE_URL}/books/1004/`,
     ],
   ]);
 
